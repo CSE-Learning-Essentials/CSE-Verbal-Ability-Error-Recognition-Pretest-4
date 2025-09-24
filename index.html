@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Civil Service Exam Practice Test - Pretest 4 (Error Recognition)</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+  }
+  .question {
+    margin-bottom: 20px;
+  }
+  .answers {
+    list-style: none;
+    padding: 0;
+  }
+  .answers li {
+    margin: 5px 0;
+  }
+  .submit-btn {
+    margin-top: 20px;
+  }
+  .result, .explanation {
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 2px solid #ccc;
+  }
+  .correct { color: green; }
+  .incorrect { color: red; }
+  .advertisement img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 5px;
+  }
+  .underlined {
+    position: relative;
+    display: inline-block;
+  }
+  .underlined::after {
+    content: attr(data-label);
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-top: 1px;
+  }
+</style>
+</head>
+<body>
+
+<h1>CIVIL SERVICE EXAM PRETEST 4</h1>
+<h3>CREATED BY: CSE LEARNING ESSENTIALS</h3>
+<h2>SECTION 1: VERBAL ABILITY</h2>
+<h3>PART 3: ERROR RECOGNITION</h3>
+<p><strong>10-ITEM TEST</strong> | <strong>PASSING SCORE: 8</strong></p>
+
+<p><em>Directions:</em> For each sentence, choose the word or phrase that must be removed or replaced in order to make the sentence grammatically correct. Choose the option E if the sentence has no errors.</p>
+
+<form id="quiz-form">
+  <div id="questions-container"></div>
+  <div class="submit-btn">
+    <button type="button" onclick="submitQuiz()">Submit</button>
+  </div>
+</form>
+
+<div id="result" class="result"></div>
+<div id="explanation" class="explanation" style="display:none;"></div>
+
+<div class="social-link">
+  <p>Follow us on <a href="https://www.facebook.com/cselearningessentials/" target="_blank">Facebook</a> for more updates!</p>
+  <p>Subscribe to our YouTube Channel <a href="https://www.youtube.com/@cselearningessentialsph2023" target="_blank">here</a> for more content!</p>
+</div>
+
+<div class="advertisement">
+  <img src="images/advertisement.png" alt="Civil Service Exam Reviewer E-book">
+  <p>Avail our latest Civil Service Exam Reviewer E-books. Direct message us for more details!</p>
+</div>
+
+<script>
+const questions = [
+{
+sentence:`1. Neither of <span class="underlined" data-label="A"><u>the girls</u></span> <span class="underlined" data-label="B"><u>brought</u></span> <span class="underlined" data-label="C"><u>their</u></span> umbrella during the sudden <span class="underlined" data-label="D"><u>downpour.</u></span>`,
+options:["A. the girls","B. brought","C. their","D. downpour","E. NO ERROR"],
+correct:"C",
+topic:"Pronoun-Antecedent Agreement",
+explanation:"“Neither” is singular, so the pronoun should also be singular.",
+correction:"Neither of the girls brought her umbrella during the sudden downpour."
+},
+{
+sentence:`2. <span class="underlined" data-label="A"><u>She said she</u></span> <span class="underlined" data-label="B"><u>will meet</u></span> <span class="underlined" data-label="C"><u>me at the library</u></span> <span class="underlined" data-label="D"><u>after class.</u></span>`,
+options:["A. She said she","B. will meet","C. me at the library","D. after class","E. NO ERROR"],
+correct:"B",
+topic:"Tense Consistency",
+explanation:"The reporting verb 'said' is past tense, so the future form should shift to 'would meet'.",
+correction:"She said she would meet me at the library after class."
+},
+{
+sentence:`3. <span class="underlined" data-label="A"><u>By the time</u></span> <span class="underlined" data-label="B"><u>we arrived</u></span>, the guests <span class="underlined" data-label="C"><u>already left</u></span> <span class="underlined" data-label="D"><u>the party.</u></span>`,
+options:["A. By the time","B. we arrived","C. already left","D. the party","E. NO ERROR"],
+correct:"C",
+topic:"Tense Consistency (Past Perfect)",
+explanation:"The leaving happened before 'we arrived,' so past perfect should be used.",
+correction:"By the time we arrived, the guests had already left the party."
+},
+{
+sentence:`4. <span class="underlined" data-label="A"><u>Walking</u></span> along the beach, she <span class="underlined" data-label="B"><u>heard</u></span> the <span class="underlined" data-label="C"><u>waves</u></span> crash <span class="underlined" data-label="D"><u>loudly</u></span> in her ears.`,
+options:["A. Walking","B. heard","C. waves","D. loudly","E. NO ERROR"],
+correct:"E",
+topic:"No Error",
+explanation:"The sentence is grammatically correct as written.",
+correction:"Walking along the beach, she heard the waves crash loudly in her ears."
+},
+{
+sentence:`5. <span class="underlined" data-label="A"><u>Each student</u></span> <span class="underlined" data-label="B"><u>must submit</u></span> <span class="underlined" data-label="C"><u>their</u></span> <span class="underlined" data-label="D"><u>project before the deadline.</u></span>`,
+options:["A. Each student","B. must submit","C. their","D. project before the deadline","E. NO ERROR"],
+correct:"C",
+topic:"Pronoun-Antecedent Agreement",
+explanation:"'Each student' is singular, so the pronoun should be singular.",
+correction:"Each student must submit his or her project before the deadline."
+},
+{
+sentence:`6. The teacher <span class="underlined" data-label="A"><u>asked</u></span> <span class="underlined" data-label="B"><u>us</u></span> <span class="underlined" data-label="C"><u>to discussed</u></span> the lesson <span class="underlined" data-label="D"><u>in pairs.</u></span>`,
+options:["A. asked","B. us","C. to discussed","D. in pairs","E. NO ERROR"],
+correct:"C",
+topic:"Troublesome Verbs (Infinitives)",
+explanation:"After 'to,' the base form should be used, not past tense.",
+correction:"The teacher asked us to discuss the lesson in pairs."
+},
+{
+sentence:`7. <span class="underlined" data-label="A"><u>If</u></span> she <span class="underlined" data-label="B"><u>was</u></span> more patient, she <span class="underlined" data-label="C"><u>would have</u></span> <span class="underlined" data-label="D"><u>understood</u></span> the instructions clearly.`,
+options:["A. If","B. was","C. would have","D. understood","E. NO ERROR"],
+correct:"B",
+topic:"Subjunctive Mood",
+explanation:"Unreal present condition requires 'were,' not 'was.'",
+correction:"If she were more patient, she would have understood the instructions clearly."
+},
+{
+sentence:`8. He <span class="underlined" data-label="A"><u>denied</u></span> <span class="underlined" data-label="B"><u>to steal</u></span> the <span class="underlined" data-label="C"><u>missing documents</u></span> <span class="underlined" data-label="D"><u>from the office.</u></span>`,
+options:["A. denied","B. to steal","C. missing documents","D. from the office","E. NO ERROR"],
+correct:"B",
+topic:"Verbals (Gerunds vs. Infinitives)",
+explanation:"'Deny' should be followed by a gerund, not an infinitive.",
+correction:"He denied stealing the missing documents from the office."
+},
+{
+sentence:`9. <span class="underlined" data-label="A"><u>Each</u></span> of the <span class="underlined" data-label="B"><u>participants</u></span> <span class="underlined" data-label="C"><u>have submitted</u></span> <span class="underlined" data-label="D"><u>his or her</u></span> application forms.`,
+options:["A. Each","B. participants","C. have submitted","D. his or her","E. NO ERROR"],
+correct:"C",
+topic:"Subject-Verb Agreement (Each is singular)",
+explanation:"'Each' is singular, so the verb should be 'has.'",
+correction:"Each of the participants has submitted his or her application form."
+},
+{
+sentence:`10. The <span class="underlined" data-label="A"><u>manager</u></span> <span class="underlined" data-label="B"><u>as well as</u></span> the <span class="underlined" data-label="C"><u>staff members</u></span> <span class="underlined" data-label="D"><u>are</u></span> ready for the meeting.`,
+options:["A. manager","B. as well as","C. staff members","D. are","E. NO ERROR"],
+correct:"D",
+topic:"Subject-Verb Agreement (as well as)",
+explanation:"The subject is 'manager' (singular), so the verb should be singular.",
+correction:"The manager, as well as the staff members, is ready for the meeting."
+}
+];
+
+const container = document.getElementById("questions-container");
+
+questions.forEach((q, idx) => {
+  const num = idx + 1;
+  let html = `<div class='question'><p><strong>${q.sentence}</strong></p><ul class='answers'>`;
+  q.options.forEach(opt => {
+    const letter = opt[0];
+    html += `<li><label><input type='radio' name='q${num}' value='${letter}'> ${opt}</label></li>`;
+  });
+  html += `</ul></div>`;
+  container.innerHTML += html;
+});
+
+function submitQuiz() {
+  let score = 0, resultHTML = '', explanationHTML = '<h3>Answer Explanations:</h3><ol>';
+  const unanswered = [];
+
+  questions.forEach((q, idx) => {
+    const num = idx + 1;
+    const selected = document.querySelector(`input[name='q${num}']:checked`);
+    const answer = q.correct;
+
+    if (!selected) {
+      unanswered.push(num);
+      return;
+    }
+
+    if (selected.value === answer) {
+      resultHTML += `<p class='correct'>Q${num}: Correct ✅</p>`;
+      score++;
+    } else {
+      resultHTML += `<p class='incorrect'>Q${num}: Incorrect ❌. Correct answer: ${answer}</p>`;
+    }
+
+    explanationHTML += `
+    <li>
+      <strong>Answer:</strong> ${answer}<br>
+      <strong>Topic:</strong> ${q.topic}<br>
+      <strong>Explanation:</strong> ${q.explanation}<br>
+      <em>Correct Sentence:</em> ${q.correction}
+    </li>`;
+  });
+
+  if (unanswered.length > 0) {
+    alert(`Please answer all questions. Missing: ${unanswered.join(", ")}`);
+    return;
+  }
+
+  explanationHTML += '</ol>';
+
+  let status = score >= 8 ? "Passed ✅" : "Failed ❌";
+  document.getElementById("result").innerHTML = `<h3>Your Score: ${score}/10 - ${status}</h3>${resultHTML}`;
+  document.getElementById("explanation").innerHTML = explanationHTML;
+  document.getElementById("explanation").style.display = "block";
+  document.getElementById("result").scrollIntoView({ behavior: "smooth" });
+}
+</script>
+
+</body>
+</html>
